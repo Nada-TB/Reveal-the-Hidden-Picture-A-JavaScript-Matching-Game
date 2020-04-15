@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+header{
+    max-width: 80%;
+    margin: 50px auto;
+}
+
+h1{
+    color:green;
+    text-align: center;
+}
+
+
+h2, h3{
+    text-align: center;
+    color: brown;
+}
+
+#root{
+    display: flex;
+    flex-wrap: wrap; 
+    width: 300px;
+    justify-content: center;
+    margin: 10px auto;
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+footer{
+    max-width: 80%;
+    margin: 100px auto;
+}
+
+small{
+    text-align: center;
+}
