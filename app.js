@@ -31,6 +31,13 @@ function addClass(elt,className){
     elt.forEach((val)=>val.classList.add(className));
 }
 
+function initGame(){
+    changeAllSrc(document.querySelectorAll('img'),'images/game.jpg');
+    removeClass(document.querySelectorAll('img'),'disabled');
+    score=0;
+    fetchResult(document.getElementById('result'),score);
+    
+}
 
 
 /*******************************************events************************************************** */
@@ -55,33 +62,43 @@ document.addEventListener('DOMContentLoaded', function(){
                     if(selectedCards.every((val)=> val=== selectedCards[0])){
                         score++;
                         fetchResult(document.getElementById('result') , score ); 
-                        fetchResult(document.getElementById('comment'), 'kudos, continue!') 
-                        changeAllSrc(document.querySelectorAll('.selected'),'images/white.jpg');
-                        addClass(document.querySelectorAll('.selected'),'disabled');
-                        removeClass(document.querySelectorAll('img'),'selected');
-                        selectedCards=[];
+                        fetchResult(document.getElementById('comment'), 'kudos, continue!');
 
-                        if(document.querySelectorAll('.disabled').length===12){
-                            fetchResult(document.getElementById('comment'), 'congratulations, you win!');
-                            setTimeout(function(){
-                                changeAllSrc(document.querySelectorAll('img'),'images/game.jpg');
-                                removeClass(document.querySelectorAll('img'),'disabled');
-                                score=0;
-                                fetchResult(document.getElementById('result'),score);
-                                fetchResult(document.getElementById('comment'), '');
-                           },5000);
+                        setTimeout(function(){
+                            changeAllSrc(document.querySelectorAll('.selected'),'images/white.jpg');
+                            addClass(document.querySelectorAll('.selected'),'disabled');
+                            removeClass(document.querySelectorAll('img'),'selected');
+                            selectedCards=[];
+                        },1000);
+                        
+                       
+                        if(score===6){   
+                            setTimeout(function(){ 
+                                fetchResult(document.getElementById('comment'), 'congratulations, you win! Play again'); 
+                                initGame();
+                            },1500);
 
                         }   
                     }else{
-                        fetchResult(document.getElementById('result'), score);
-                        fetchResult(document.getElementById('comment'), 'hard luck')
-                        setTimeout(function(){
-                            changeAllSrc(document.querySelectorAll('.selected'),'images/game.jpg');
-                            removeClass(document.querySelectorAll('img'),'selected');
-                            fetchResult(document.getElementById('result'),score);
-                            fetchResult(document.getElementById('comment'), '');
-                            selectedCards=[];
-                        },1000)
+                        if(document.querySelectorAll('.disabled').length===10){
+                            setTimeout(function(){
+                                fetchResult(document.getElementById('comment'), 'Sorry, you lose! Start over');
+                                initGame();    
+                            },2500);         
+                        
+                        }
+
+                            fetchResult(document.getElementById('result'), score);
+                            fetchResult(document.getElementById('comment'), 'hard luck');
+                            setTimeout(function(){ 
+                                changeAllSrc(document.querySelectorAll('.selected'),'images/game.jpg');
+                                removeClass(document.querySelectorAll('img'),'selected');
+                                fetchResult(document.getElementById('result'),score);
+                                fetchResult(document.getElementById('comment'), '');
+                                selectedCards=[];
+                            },1000);
+
+                        
                 }
             }
         }     
