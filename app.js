@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function(){
                                 score=0;
                                 fetchResult(document.getElementById('result'),score);
                                 fetchResult(document.getElementById('comment'), '');
-                           },5000);
+                           },1000);
 
                         }   
                     }else{
