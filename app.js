@@ -56,10 +56,12 @@ document.addEventListener('DOMContentLoaded', function(){
                         score++;
                         fetchResult(document.getElementById('result') , score ); 
                         fetchResult(document.getElementById('comment'), 'kudos, continue!') 
-                        changeAllSrc(document.querySelectorAll('.selected'),'images/white.jpg');
-                        addClass(document.querySelectorAll('.selected'),'disabled');
-                        removeClass(document.querySelectorAll('img'),'selected');
-                        selectedCards=[];
+                        setTimeout(function(){
+                            changeAllSrc(document.querySelectorAll('.selected'),'images/white.jpg');
+                            addClass(document.querySelectorAll('.selected'),'disabled');
+                            removeClass(document.querySelectorAll('img'),'selected');
+                            selectedCards=[];
+                        },500);
 
                         if(document.querySelectorAll('.disabled').length===12){
                             fetchResult(document.getElementById('comment'), 'congratulations, you win!');
