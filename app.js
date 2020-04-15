@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function(){
                             addClass(document.querySelectorAll('.selected'),'disabled');
                             removeClass(document.querySelectorAll('img'),'selected');
                             selectedCards=[];
-                        },5000);
+                        },1000);
 
                         if(document.querySelectorAll('.disabled').length===12){
                             fetchResult(document.getElementById('comment'), 'congratulations, you win!');
