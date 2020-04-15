@@ -10,6 +10,7 @@ header{
 p{
     text-align:center;
     max-width:50%;
+    margin: 20px auto;
 }
 h1{
     color:green;
