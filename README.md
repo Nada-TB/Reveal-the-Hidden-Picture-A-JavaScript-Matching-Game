@@ -1,10 +1,27 @@
-# buildYourSuperWallGame
+# build Your Super Wall Game: 
 
-## Concept:
-Click on the card of your choice, a new photo will appear. Click on the next one (the position doesn't matter). 
+### Link :https://nada-tb.github.io/buildYourSuperWallGame/
+### Inspired by : @kubowania javascript games tutorial
 
-If it is identical to the first one, you will get plus one your score,a part of the wall will show up.
+* ### [How to play](#how-to-play-1)
+* ### [Programming concepts applied](#programming-concepts-applied-1)
 
-Continue until you build your super wall!
+## How to play:
+  Click on the card of your choice, a new photo will appear. Click on the next one (the position doesn't matter). 
 
-See result here [github](https://nada-tb.github.io/buildYourSuperWallGame/)
+  If it is identical to the first one, you will get plus one your score,a part of the wall will show up.
+
+  Continue until you build your super wall!
+
+## Programming concepts applied:
+Javascript |
+----------|
+DOM document|
+DOM methods|
+Events|
+Timing events|
+Scope|
+classes ES6|
+Array methods|
+Loop for|
+
